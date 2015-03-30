@@ -1,0 +1,14 @@
+
+
+# Create a new directory “input” on HDFS
+bin/hdfs dfs -mkdir input
+
+# Put local directory /etc/hadoop into a new directory “input in HDFS.
+bin/hdfs dfs -put etc/hadoop input
+
+# List the directory “input” on HDFS
+bin/hdfs dfs -ls input
+
+# Fun the application on the input directory "input", and put the results in the  output directory “output”.
+hadoop jar build/jar/Temperature.jar input/sample.txt output
+
