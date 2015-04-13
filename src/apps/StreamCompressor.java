@@ -27,7 +27,7 @@ public class StreamCompressor {
 				ReflectionUtils.newInstance(codecClass, conf);
 		
 		CompressionOutputStream out = codec.createOutputStream(System.out);
-		IOUtils.copyBytes(System.in, out,4096, false);
+		IOUtils.copyBytes(System.in, out, 4096 /*buffer*/, false);
 
 		out.finish();
 	}

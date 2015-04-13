@@ -15,6 +15,8 @@ bin/hdfs dfs -ls input
 
 # Run the StreamCompressor to compress the input from System.in and output to System.out, using the codec Gzip
 > echo "Text" | hadoop StreamCompressor org.apache.hadoop.io.compress.GzipCodec | gzip -
-
 # expected result "Text"
+
+# Run the FileDecompressor
+> hadoop FileDecompressor file.gz
 
