@@ -10,5 +10,11 @@ bin/hdfs dfs -put etc/hadoop input
 bin/hdfs dfs -ls input
 
 # Fun the application on the input directory "input", and put the results in the  output directory “output”.
-hadoop jar build/jar/Temperature.jar input/sample.txt output
+> hadoop jar build/jar/Temperature.jar input/sample.txt output
+
+
+# Run the StreamCompressor to compress the input from System.in and output to System.out, using the codec Gzip
+> echo "Text" | hadoop StreamCompressor org.apache.hadoop.io.compress.GzipCodec | gzip -
+
+# expected result "Text"
 
